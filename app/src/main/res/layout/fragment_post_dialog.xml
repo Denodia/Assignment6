@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/MatchParent"
+    android:background="@drawable/layout_border"
+    tools:context=".fragments.PostDialogFragment">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_marginLeft="@dimen/margin_5dp"
+        android:layout_marginRight="@dimen/margin_5dp"
+        android:id="@+id/dialog_swipe_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="vertical"
+        style="@style/MatchParent">
+
+        <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_centerHorizontal="true"
+        android:id="@+id/show_text"
+        android:layout_marginTop="@dimen/margin_20dp"
+        android:textSize="@dimen/text_size_25sp"
+        android:textStyle="bold"
+        android:text="@string/user_posts_data"
+        style="@style/WrapContent"/>
+
+    <TextView
+        android:layout_marginTop="18dp"
+        android:background="@drawable/ic_cancel_black_24dp"
+        android:layout_marginRight="@dimen/margin_20dp"
+        android:layout_alignParentRight="true"
+        android:id="@+id/tv_cross_button"
+        android:layout_width="@dimen/margin_40dp"
+        android:layout_height="@dimen/margin_40dp"/>
+
+</RelativeLayout>
+
+  <RelativeLayout
+    android:layout_marginTop="@dimen/margin_10dp"
+    android:visibility="gone"
+    android:id="@+id/dialog_error_layout"
+    style="@style/MatchParent">
+
+    <TextView
+        android:layout_centerInParent="true"
+        android:gravity="center_vertical"
+        android:id="@+id/tv_dialog_error"
+        style="@style/WrapContent"
+        android:text="@string/error_massage"/>
+
+    <Button
+        android:layout_marginTop="@dimen/margin_10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/tv_dialog_error"
+        android:text="@string/retry"
+        android:id="@+id/btn_dialog_retry"
+        style="@style/WrapContent"/>
+
+</RelativeLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/dialog_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</FrameLayout>

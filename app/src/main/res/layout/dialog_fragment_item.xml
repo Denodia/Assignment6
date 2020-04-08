@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_marginLeft="@dimen/margin_5dp"
+    android:layout_marginRight="@dimen/margin_5dp"
+    android:background="@drawable/button_style"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:text="@string/id"
+        android:id="@+id/tv_dialog_id"
+        style="@style/PostDialog"/>
+
+    <TextView
+        android:layout_below="@+id/tv_dialog_id"
+        android:text="@string/title"
+        android:id="@+id/tv_dialog_title"
+        style="@style/PostDialog"/>
+
+    <TextView
+        android:layout_marginBottom="@dimen/margin_10dp"
+        android:layout_below="@+id/tv_dialog_title"
+        android:text="@string/body"
+        android:id="@+id/tv_dialog_body"
+        style="@style/PostDialog"/>
+
+</RelativeLayout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/MatchParent"
+    android:layout_marginTop="@dimen/margin_5dp"
+    android:layout_marginBottom="@dimen/margin_5dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".fragments.UserListFragment">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_marginLeft="@dimen/margin_5dp"
+        android:layout_marginRight="@dimen/margin_5dp"
+        android:id="@+id/swipe_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        app:cardCornerRadius="@dimen/margin_5dp"
+        android:layout_marginLeft="@dimen/margin_5dp"
+        android:layout_marginRight="@dimen/margin_5dp"
+        style="@style/MatchParent"
+        app:cardBackgroundColor="@color/color_white">
+
+        <LinearLayout
+          android:orientation="vertical"
+          style="@style/MatchParent">
+
+            <TextView
+            android:textSize="@dimen/text_size_25sp"
+            android:textStyle="bold"
+            android:text="@string/users_list"
+            android:layout_gravity="center_horizontal"
+            style="@style/WrapContent"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        style="@style/MatchParent">
+
+ <RelativeLayout
+    android:visibility="gone"
+    android:id="@+id/error_layout"
+    style="@style/MatchParent">
+
+       <TextView
+        android:id="@+id/tv_user_list_error_msg"
+        android:layout_centerInParent="true"
+        style="@style/UserList"
+        android:text="@string/error_message"/>
+
+       <Button
+        android:layout_marginTop="@dimen/margin_5dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/tv_user_list_error_msg"
+        android:id="@+id/btn_user_list_fragment_retry"
+        android:text="@string/retry"
+        style="@style/UserList"/>
+
+   </RelativeLayout>
+
+       <androidx.recyclerview.widget.RecyclerView
+         android:id="@+id/user_list_recyclerview"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+  </LinearLayout>
+       </androidx.cardview.widget.CardView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</FrameLayout>
